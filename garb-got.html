@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GARB-GOT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <img src="https://img.freepik.com/premium-vector/garbage-truck-sanitation-worker-garbage-man-uniform-with-trash-bin-recycling-symbol_625536-3611.jpg?w=1380" alt="logo"/>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <header>
+        <h1>Garb-Got</h1>
+    </header>
+    <main>
+        <section id="schedule">
+            <h2>Garbage Collection Schedule</h2>
+        </section>
+        <section id="resources">
+            <h2>Educational Resources</h2>
+            <ul id="resources-list"></ul>
+        </section>
+        <section id="waste-type-search">
+            <h2>Search Your Waste Here</h2>
+            <form id="waste-type-search-form">
+                <label for="waste-type">Enter waste type:</label>
+                <input type="text" id="waste-type" name="waste-type" required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="search-results"></div>
+        </section>
+        <section id="waste-type-form">
+            <h2>Know My Waste Type!</h2>
+            <form id="waste-id-search-form">
+                <label for="waste-id">Enter Waste Id</label>
+                <input type="text" id="waste-id" name="waste-id" required>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+        <section id="waste-types">
+          
+            <ul id="waste-types-list"></ul>
+        </section>
+        <section id="waste-transfers">
+           
+            <ul id="waste-transfers-list"></ul>
+        </section>
+        <section id="waste-treatments">
+           
+            <ul id="waste-treatments-list"></ul>
+        </section>
+        <section id="feedback">
+            <h2>Feedback</h2>
+            <form id="feedback-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <ul id="feedback-list"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;2024 Garb-Got. All rights reserved</p>
+    </footer>
+    <script src="Garb-Got.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@6.7.0/dist/ol.js"></script>
+</body>
+</html>
