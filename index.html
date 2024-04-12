@@ -13,47 +13,28 @@
         <h1>Garb-Got</h1>
     </header>
     <main>
-        <section id="schedule">
+        <section id="schedule-result">
             <h2>Garbage Collection Schedule</h2>
+        
+            <form id="pick-up-schedule-form">
+                <label for="estate">Input Estate:</label>
+                <input type="text" id="estate" name="estate" required>
+                <button type="submit">View</button>
+            </form>
+          
         </section>
         <section id="resources">
             <h2>Educational Resources</h2>
             <ul id="resources-list"></ul>
         </section>
-        <section id="waste-type-search">
-            <h2>Search Your Waste Here</h2>
-            <form id="waste-type-search-form">
-                <label for="waste-type">Enter waste type:</label>
-                <input type="text" id="waste-type" name="waste-type" required>
-                <button type="submit">Search</button>
-            </form>
-            <div id="search-results"></div>
-        </section>
-        <section id="waste-type-form">
-            <h2>Know My Waste Type!</h2>
-            <form id="waste-id-search-form">
-                <label for="waste-id">Enter Waste Id</label>
-                <input type="text" id="waste-id" name="waste-id" required>
-                <button type="submit">Search</button>
-            </form>
-        </section>
-        <section id="waste-types">
-          
-            <ul id="waste-types-list"></ul>
-        </section>
-        <section id="waste-transfers">
-           
-            <ul id="waste-transfers-list"></ul>
-        </section>
-        <section id="waste-treatments">
-           
-            <ul id="waste-treatments-list"></ul>
-        </section>
+   
         <section id="feedback">
             <h2>Feedback</h2>
             <form id="feedback-form">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required><br><br>
+                <label for="estate">Estate:</label>
+                <input type="text" id="estate" name="estate" required><br>
                 <label for="message">Message:</label><br>
                 <textarea id="message" name="message" rows="4" cols="50" required></textarea>
                 <button type="submit">Submit</button>
