@@ -1,6 +1,9 @@
 //creating a scheduler for the collection days.
 //the data is stored in two arrays containing the day and time of the scheduled pick up.
 
+//creating a scheduler for the collection days.
+//the data is stored in two arrays containing the day and time of the scheduled pick up.
+
 const schedule ={
     madaraka:{
         days:['Monday', 'Thursday'],
@@ -20,73 +23,33 @@ const schedule ={
 
 //having created the schedule we now display it in the html.
 
-const displaySchedule = () => {
-    console.log('Displaying schedule');
-    const scheduleElement = document.getElementById('schedule');
-    Object.keys(schedule).forEach(estate => {
-        const estateSchedule = schedule[estate];
-        const scheduleItem = document.createElement('div');
-        scheduleItem.classList.add('schedule-item');
-        scheduleItem.innerHTML = `
-            <div>
-                <h3>${estate} Estate</h3>
-                <ul>
-                    <li>Days: ${estateSchedule.days.join(', ')}</li>
-                    <li>Times: ${estateSchedule.times.join(' and ')}</li>
-                </ul>
-            </div>
-        `;
-        scheduleElement.appendChild(scheduleItem);
+document.addEventListener('DOMContentLoaded', () =>{
+    const pickUpScheduleForm = document.getElementById('pick-up-schedule-form');
+    const scheduleResult = document.getElementById('schedule-result');
+
+    pickUpScheduleForm.addEventListener('submit',(event)=>{
+        event.preventDefault();
+        const estate = document.getElementById('estate').value;
+        if(schedule[estate]){
+            const estateSchedule = schedule[estate];
+            scheduleResult.innerHTML =`
+            <h3>${estate} Estate Schedule</h3>
+            <ul>
+                <li>Days: ${estateSchedule.days.join(', ')}</li>
+                <li>Times: ${estateSchedule.times.join(' and ')}</li>
+            </ul>
+            `;
+        } else {
+            scheduleResult.innerHTML = 'Schedule not found';
+        }
     });
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-    displaySchedule();
 });
-
 //we now continue to the feedback section.
 
 const resources ={
     recycling:{
-        title: 'Best Recycling Practices!',
-        content:` What can i recycle?
-        Letters
-
-        Envelopes
-        
-        Brochures
-        
-        Cardboard boxes (flattened)
-        
-        Egg boxes
-        
-        Potato bags
-        
-        Cardboard centres from toilet roll and kitchen roll
-        
-        Newspapers
-        
-        'Tetra Pak' cartons for juice or milk
-        
-        Pizza boxes (if part of the box is soiled, seperate this and put it in your brown bin)
-        
-        Rigid plastic (washed and dried)
-        
-        Plastic drink bottles
-        
-        Plastic cleaning bottles
-        
-        Butter, yoghurt and salad tubs
-        
-        Plastic trays for fruit and vegetables
-        
-        Plastic milk containers
-        
-        Plastic bottles for liquid soap or shampoo
-        
-        Soft plastic (washed and dried)
-        
-        Frozen food bags
+        title: 'What can I recycle?',
+        content:` Frozen food bags
         
         Bread wrappers
         
@@ -113,8 +76,7 @@ const resources ={
         Instead of buying new items, try and repair the ones you have. For example, you could repair your clothes, furniture, bike or appliances. Information on how to fix most things is available on the internet. Or, you can get a local professional to fix your items.
         
         Another option is upcycling. This is reusing items you no longer want, to make new products or materials of a higher value. It can be a fun and creative way of reducing waste and breathing new life into old items.
-        
-       Avoid single-use plastics
+
 
 Single-use plastics (SUPs) are items that are used once, or for a short period of time, 
 and then thrown away. 
@@ -199,26 +161,9 @@ const feedback =[];
  });
 
 
-    const wasteTypeForm = document.getElementById('waste-type-search-form');
-const wasteTypeResult = document.getElementById('waste-type-result');
 
-wasteTypeForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const wasteId = document.getElementById('waste-id').value;
-    fetch('https://your-api-endpoint.com/data')
-        .then(response => response.json())
-        .then(data => {
-            const wasteType = data.listOfWasteTypes.list.find(item => item.waste_type_id === parseInt(wasteId));
-            if (wasteType) {
-                wasteTypeResult.textContent = `Waste ID: ${wasteType.waste_type_id}, Waste Type: ${wasteType.waste_type}`;
-            } else {
-                wasteTypeResult.textContent = 'Waste ID not found';
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching API data:', error);
-        });
-});
+
+
 
 //initializing variables for waste form.
 const form = document.getElementById('waste-type-search-form');
@@ -260,18 +205,5 @@ form.addEventListener('submit', function(event){
     }
 };
 document.addEventListener('DOMContentLoaded', () =>{
-    const feedbackList = document.getElementById('feedback-list');
-    const feedbackForm = document.getElementById('feedback-form');
-    const feedback = [];
-
-    const displayFeedback = () =>{
-        feedbackList.innerHTML ='';
-        feedback.forEach(feedbackItem =>{
-            const listItem = document.createElement('li');
-            listItem.innerHTML =`<strong>${feedbackItem.name}</strong>: ${feedbackItem.message}`;
-            feedbackList.appendChild(listItem);
-        });
-
-        //
-    }
-})
+    displayFeedback();
+});
