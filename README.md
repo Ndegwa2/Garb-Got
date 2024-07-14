@@ -1,6 +1,6 @@
 
 
-file:///home/ndegwa/Pictures/Screenshots/Screenshot%20from%202024-07-14%2021-18-30.png
+
 
 
 
