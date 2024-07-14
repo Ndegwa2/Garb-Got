@@ -1,8 +1,9 @@
 
 
+file:///home/ndegwa/Pictures/Screenshots/Screenshot%20from%202024-07-14%2021-18-30.png
 
 
-file:///home/ndegwa/Videos/Screencasts/Screencast%20from%2014-07-2024%2009:14:22%20ALASIRI.webm
+
 
 #Garb-Got
 
