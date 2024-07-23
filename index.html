@@ -13,21 +13,42 @@
         <h1>Garb-Got</h1>
     </header>
     <main>
+        <!-- Garbage Collection Schedule Section -->
         <section id="schedule-result">
             <h2>Garbage Collection Schedule</h2>
-        
             <form id="pick-up-schedule-form">
                 <label for="estate">Input Estate:</label>
                 <input type="text" id="estate" name="estate" required>
                 <button type="submit">View</button>
             </form>
-          
         </section>
+
+        <!-- Educational Resources Section -->
         <section id="resources">
             <h2>Educational Resources</h2>
             <ul id="resources-list"></ul>
         </section>
-   
+
+        <!-- Facilities Awards and Performance Section -->
+        <div id="performance-section">
+            <h2>Facilities Awards and Performance</h2>
+            <form id="performance-search-form">
+                <label for="facility-search">Search Facility:</label>
+                <input type="text" id="facility-search" name="facility-search" required>
+                <button type="submit">Search</button>
+            </form>
+            <ul id="performance-results"></ul>
+        </div>
+
+        <!-- Waste Type Search Section -->
+        <form id="waste-type-search-form">
+            <label for="waste-type">Enter Waste Type:</label>
+            <input type="text" id="waste-type" name="waste-type" required>
+            <button type="submit">Search</button>
+        </form>
+        <ul id="search-results"></ul>
+
+        <!-- Feedback Section -->
         <section id="feedback">
             <h2>Feedback</h2>
             <form id="feedback-form">
@@ -49,3 +70,4 @@
     <script src="https://cdn.jsdelivr.net/npm/ol@6.7.0/dist/ol.js"></script>
 </body>
 </html>
+
